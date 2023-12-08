@@ -1,0 +1,20 @@
+server:
+  port: 3456
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://35.247.161.13:5432/travelmarketplace
+    username: postgres
+    password: capstonevlu
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
