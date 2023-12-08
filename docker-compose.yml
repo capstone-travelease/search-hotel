@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  login:
+    container_name: search-hotels
+    image: coderbillzay/search-hotels
+    ports:
+      - '9089:9089'
+    volumes:
+      - ./:/server
+    restart: always
