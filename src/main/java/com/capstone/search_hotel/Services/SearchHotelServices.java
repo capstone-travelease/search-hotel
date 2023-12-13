@@ -1,8 +1,8 @@
 package com.capstone.search_hotel.Services;
 
-import com.capstone.search_hotel.DTOs.ResponseStatus;
-import com.capstone.search_hotel.DTOs.SearchResponse;
-import com.capstone.search_hotel.Entities.Hotels;
+import com.capstone.search_hotel.DTOs.RequestBodyDTO;
+import com.capstone.search_hotel.DTOs.ResponseData;
+import com.capstone.search_hotel.Entities.ResponseSearch;
 import com.capstone.search_hotel.Repositories.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,23 +18,13 @@ public class SearchHotelServices {
         this.hotelRepository = hotelRepository;
     }
 
-    public List<SearchResponse> SearchHotel(String hotelName){
-        List<Hotels> data = hotelRepository.searchHotel(hotelName);
 
+    public List<ResponseData> searchHotel(RequestBodyDTO requestBodyDTO){
+        List<ResponseSearch> data = hotelRepository.search(requestBodyDTO.getLocation(), requestBodyDTO.getAdult_number());
         return List.of(
-                new SearchResponse(
+                new ResponseData(
                         200,
                         data,
-                        "Successful"
-                )
-        );
-    }
-
-    public List<SearchResponse> GetHotel(){
-        return List.of(
-                new SearchResponse(
-                        200,
-                        hotelRepository.findAll(),
                         "Successful"
                 )
         );

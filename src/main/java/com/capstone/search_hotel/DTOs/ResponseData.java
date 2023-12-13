@@ -1,18 +1,18 @@
 package com.capstone.search_hotel.DTOs;
 
-import com.capstone.search_hotel.Entities.Hotels;
+import com.capstone.search_hotel.Entities.ResponseSearch;
 
 import java.util.List;
 
-public class SearchResponse {
+public class ResponseData {
     private Integer code;
-    private List<Hotels> data;
+    private List<ResponseSearch> data;
     private String message;
 
-    public SearchResponse() {
+    public ResponseData() {
     }
 
-    public SearchResponse(Integer code, List<Hotels> data, String message) {
+    public ResponseData(Integer code, List<ResponseSearch> data, String message) {
         this.code = code;
         this.data = data;
         this.message = message;
@@ -26,11 +26,11 @@ public class SearchResponse {
         this.code = code;
     }
 
-    public List<Hotels> getData() {
+    public List<ResponseSearch> getData() {
         return data;
     }
 
-    public void setData(List<Hotels> data) {
+    public void setData(List<ResponseSearch> data) {
         this.data = data;
     }
 

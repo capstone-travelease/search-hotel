@@ -1,13 +1,11 @@
 package com.capstone.search_hotel.Controllers;
 
-import com.capstone.search_hotel.DTOs.SearchResponse;
-import com.capstone.search_hotel.Entities.Hotels;
+import com.capstone.search_hotel.DTOs.RequestBodyDTO;
+import com.capstone.search_hotel.DTOs.ResponseData;
+import com.capstone.search_hotel.Entities.ResponseSearch;
 import com.capstone.search_hotel.Services.SearchHotelServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,13 +19,8 @@ public class SearchHotelController {
         this.searchHotelServices = searchHotelServices;
     }
 
-    @GetMapping("/search/{hotelName}")
-    public List<SearchResponse> SearchHotel(@PathVariable("hotelName") String hotelName){
-        return searchHotelServices.SearchHotel(hotelName);
-    }
-
-    @GetMapping("/get-hotel")
-    public List<SearchResponse> GetHotel(){
-        return searchHotelServices.GetHotel();
+    @PostMapping("/search")
+    public List<ResponseData> SearchPost(@RequestBody RequestBodyDTO requestBodyDTO){
+        return searchHotelServices.searchHotel(requestBodyDTO);
     }
 }
