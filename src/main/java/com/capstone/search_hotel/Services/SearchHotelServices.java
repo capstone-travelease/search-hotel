@@ -22,7 +22,7 @@ public class SearchHotelServices {
     }
 
     public List<ResponseData> searchHotel(RequestBodyDTO requestBodyDTO){
-        List<ResponseSearch> data = hotelRepository.search(requestBodyDTO.getLocation());
+        List<ResponseSearch> data = hotelRepository.search(requestBodyDTO.getLocation(), requestBodyDTO.getAdultNumber());
 
         Map<Integer, ResponseSearch> minPrices = new HashMap<>();
 

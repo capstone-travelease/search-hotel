@@ -20,7 +20,7 @@ public class SearchHotelController {
     }
 
     @PostMapping("/search")
-    public List<ResponseData> SearchPost(@RequestBody RequestBodyDTO requestBodyDTO){
-        return searchHotelServices.searchHotel(requestBodyDTO);
+    public ResponseData SearchPost(@RequestBody RequestBodyDTO requestBodyDTO){
+        return searchHotelServices.searchHotel(requestBodyDTO).get(0);
     }
 }

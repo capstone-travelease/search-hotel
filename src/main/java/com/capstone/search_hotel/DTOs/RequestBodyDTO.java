@@ -5,9 +5,9 @@ import java.util.List;
 
 public class RequestBodyDTO {
     private String location;
-    private LocalDate from_date;
-    private LocalDate to_date;
-    private Integer adult_number;
+    private LocalDate fromDate;
+    private LocalDate toDate;
+    private Integer adultNumber;
     private Integer roomNumber;
     private String hotelName;
     private Integer money_from;
@@ -19,11 +19,11 @@ public class RequestBodyDTO {
     public RequestBodyDTO() {
     }
 
-    public RequestBodyDTO(String location, LocalDate from_date, LocalDate to_date, Integer adult_number, Integer roomNumber) {
+    public RequestBodyDTO(String location, LocalDate fromDate, LocalDate toDate, Integer adultNumber, Integer roomNumber) {
         this.location = location;
-        this.from_date = from_date;
-        this.to_date = to_date;
-        this.adult_number = adult_number;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+        this.adultNumber = adultNumber;
         this.roomNumber = roomNumber;
     }
 
@@ -35,28 +35,28 @@ public class RequestBodyDTO {
         this.location = location;
     }
 
-    public LocalDate getFrom_date() {
-        return from_date;
+    public LocalDate getFromDate() {
+        return fromDate;
     }
 
-    public void setFrom_date(LocalDate from_date) {
-        this.from_date = from_date;
+    public void setFromDate(LocalDate fromDate) {
+        this.fromDate = fromDate;
     }
 
-    public LocalDate getTo_date() {
-        return to_date;
+    public LocalDate getToDate() {
+        return toDate;
     }
 
-    public void setTo_date(LocalDate to_date) {
-        this.to_date = to_date;
+    public void setToDate(LocalDate toDate) {
+        this.toDate = toDate;
     }
 
-    public Integer getAdult_number() {
-        return adult_number;
+    public Integer getAdultNumber() {
+        return adultNumber;
     }
 
-    public void setAdult_number(Integer adult_number) {
-        this.adult_number = adult_number;
+    public void setAdultNumber(Integer adultNumber) {
+        this.adultNumber = adultNumber;
     }
 
     public Integer getRoomNumber() {
