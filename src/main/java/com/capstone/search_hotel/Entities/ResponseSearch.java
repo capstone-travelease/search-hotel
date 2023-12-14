@@ -20,6 +20,11 @@ public class ResponseSearch {
         this.price = price;
     }
 
+    public ResponseSearch(Integer hotel_id, Double price) {
+        this.hotel_id = hotel_id;
+        this.price = price;
+    }
+
     public Integer getHotel_id() {
         return hotel_id;
     }
