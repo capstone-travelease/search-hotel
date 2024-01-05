@@ -1,17 +1,29 @@
 package com.capstone.search_hotel.Entities;
 
+import com.capstone.search_hotel.DTOs.ResponseImage;
+
+import java.util.List;
+
 public class ResponseSearch {
     private Integer hotel_id;
     private String hotel_name;
     private String hotel_city;
     private Double star_rating;
-    private String images;
+    private List<ResponseImage> images;
     private Double price;
 
     public ResponseSearch() {
     }
 
-    public ResponseSearch(Integer hotel_id, String hotel_name, String hotel_city, Double star_rating, String images, Double price) {
+    public ResponseSearch(Integer hotel_id, String hotel_name, String hotel_city, Double star_rating, Double price) {
+        this.hotel_id = hotel_id;
+        this.hotel_name = hotel_name;
+        this.hotel_city = hotel_city;
+        this.star_rating = star_rating;
+        this.price = price;
+    }
+
+    public ResponseSearch(Integer hotel_id, String hotel_name, String hotel_city, Double star_rating, List<ResponseImage> images, Double price) {
         this.hotel_id = hotel_id;
         this.hotel_name = hotel_name;
         this.hotel_city = hotel_city;
@@ -57,11 +69,11 @@ public class ResponseSearch {
         this.star_rating = star_rating;
     }
 
-    public String getImages() {
+    public List<ResponseImage> getImages() {
         return images;
     }
 
-    public void setImages(String images) {
+    public void setImages(List<ResponseImage> images) {
         this.images = images;
     }
 
