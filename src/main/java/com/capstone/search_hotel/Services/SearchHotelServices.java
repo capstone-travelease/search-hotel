@@ -8,10 +8,7 @@ import com.capstone.search_hotel.Repositories.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class SearchHotelServices {
@@ -25,7 +22,7 @@ public class SearchHotelServices {
     public List<ResponseData> searchHotel(RequestBodyDTO requestBodyDTO){
         List<ResponseSearch> data = hotelRepository.search(requestBodyDTO.getLocation(), requestBodyDTO.getAdultNumber());
 
-        Map<Integer, ResponseSearch> minPrices = new HashMap<>();
+        Map<Integer, ResponseSearch> minPrices = new LinkedHashMap<>();
 
         for(ResponseSearch dataSearch : data){
             int hotelId = dataSearch.getHotel_id();
@@ -37,6 +34,7 @@ public class SearchHotelServices {
         }
 
         List<ResponseSearch> minPriceHotels = new ArrayList<>(minPrices.values());
+
 
         for(ResponseSearch dataHotel : minPriceHotels ){
             int hotelId = dataHotel.getHotel_id();
