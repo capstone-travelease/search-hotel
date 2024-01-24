@@ -20,7 +20,7 @@ public class SearchHotelServices {
     }
 
     public List<ResponseData> searchHotel(RequestBodyDTO requestBodyDTO){
-        List<ResponseSearch> data = hotelRepository.search(requestBodyDTO.getLocation(), requestBodyDTO.getAdultNumber());
+        List<ResponseSearch> data = hotelRepository.search(requestBodyDTO.getLocation(), requestBodyDTO.getAdultNumber(), requestBodyDTO.getFromDate(), requestBodyDTO.getToDate());
 
         Map<Integer, ResponseSearch> minPrices = new LinkedHashMap<>();
 
