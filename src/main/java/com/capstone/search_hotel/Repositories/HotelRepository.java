@@ -31,5 +31,4 @@ public interface HotelRepository extends JpaRepository<Hotels, Long> {
             "INNER JOIN Hotels h ON h.hotel_id = hatc.hotel_id\n" +
             "WHERE h.hotel_id = ?1")
     List<ResponseImage> listAttachment(Integer hotelId);
-
 }
