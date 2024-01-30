@@ -21,7 +21,7 @@ public interface HotelRepository extends JpaRepository<Hotels, Long> {
             "INNER JOIN Attachment atc ON atc.attachment_id = hat.attachment_id\n" +
             "INNER JOIN Booking bk ON bk.hotelId = h.hotel_id\n" +
             "INNER JOIN BookingStatus bks ON bks.bookingStatusId = bk.bookingStatusId\n" +
-            "WHERE h.hotel_city LIKE %?1% AND rd.room_capacity >= ?2 AND bk.checkinDate >= ?3 AND bk.checkoutDate <= ?4\n"+
+            "WHERE h.hotel_city LIKE %?1% AND rd.room_capacity >= ?2\n"+
             "ORDER BY r.room_price"
     )
     List<ResponseSearch> search(String city, Integer capacity, LocalDate checkIn, LocalDate checkOut);
