@@ -14,18 +14,20 @@ public class Rooms {
     private Integer room_status;
     private Double room_price;
     private Integer room_type_id;
+    private Integer room_quantity;
     private Integer hotel_id;
 
     public Rooms() {
     }
 
-    public Rooms(Integer room_id, String room_name, String room_images, Integer room_status, Double room_price, Integer room_type_id, Integer hotel_id) {
+    public Rooms(Integer room_id, String room_name, String room_images, Integer room_status, Double room_price, Integer room_type_id, Integer room_quantity, Integer hotel_id) {
         this.room_id = room_id;
         this.room_name = room_name;
         this.room_images = room_images;
         this.room_status = room_status;
         this.room_price = room_price;
         this.room_type_id = room_type_id;
+        this.room_quantity = room_quantity;
         this.hotel_id = hotel_id;
     }
 
@@ -69,6 +71,14 @@ public class Rooms {
         this.room_price = room_price;
     }
 
+    public Integer getRoom_quantity() {
+        return room_quantity;
+    }
+
+    public void setRoom_quantity(Integer room_quantity) {
+        this.room_quantity = room_quantity;
+    }
+
     public Integer getRoom_type_id() {
         return room_type_id;
     }
@@ -94,6 +104,7 @@ public class Rooms {
                 ", room_status=" + room_status +
                 ", room_price=" + room_price +
                 ", room_type_id=" + room_type_id +
+                ", room_quantity=" + room_quantity +
                 ", hotel_id=" + hotel_id +
                 '}';
     }
